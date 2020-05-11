@@ -19,7 +19,10 @@ if __name__ == '__main__':
         '(': '-.--.', ')': '-.--.-'
     }
     encoded = []
-    words = " ".join(sys.argv[1:]).split(' ')
+    words = " ".join(sys.argv[1:])
+    if len(words) == 0:
+        quit()
+    words = words.split(' ')
     for word in words:
         if not word.isalnum():
             quit("ERROR")
