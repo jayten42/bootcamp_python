@@ -1,4 +1,11 @@
 class Recipe:
+    name = ""
+    cooking_lvl = 0
+    cooking_time = 0
+    ingredients = []
+    recipe_type = ""
+    description = ""
+
     def __init__(self, name, cooking_lvl, cooking_time, ingredients, recipe_type, description=""):
         self.name = name
         self.cooking_lvl = cooking_lvl
