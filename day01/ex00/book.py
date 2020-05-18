@@ -29,6 +29,9 @@ class Book:
 
     def get_recipes_by_type(self, recipe_type):
         """Get all recipe names for a given recipe_type"""
+        if recipe_type not in self.recipes_list:
+            print("{} is invalid recipe type.".format(recipe_type))
+            return
         recipe_names = [recipe.name for recipe in self.recipes_list[recipe_type]]
         return recipe_names
 
