@@ -15,8 +15,10 @@ class Recipe:
         self.recipe_type = recipe_type
         self.description = description
 
+        if not isinstance(name, str):
+            error_message += "`name` must be string.\n"
         if cooking_lvl not in range(1, 6):
-            error_message += "`cooking_lvl` must be range 1 to 5. but it is \n"
+            error_message += "`cooking_lvl` must be range 1 to 5.\n"
         if not isinstance(cooking_time, int) or cooking_time < 0:
             error_message += "`cooking_time` must be positive numbers in minutes.\n"
         if not isinstance(ingredients, list):
@@ -34,5 +36,5 @@ class Recipe:
               "cooking level:\t{recipe.cooking_lvl}\n"\
               "cooking time:\t{recipe.cooking_time}\n" \
               "ingredients:\t{recipe.ingredients}\n" \
-              "recipe type:\t{recipe type}\n"
+              "recipe type:\t{recipe.recipe_type}\n"
         return txt.format(recipe=self)
